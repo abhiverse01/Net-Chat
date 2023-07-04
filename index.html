@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbox</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container py-5 px-4">
+        <div class="row rounded-lg overflow-hidden shadow">
+            <div class="col-12 px-0">
+                <div class="px-4 pt-5 pb-4 bg-white">
+                    <h1 class="mb-0">Chatbox</h1>
+                </div>
+                <div id="chat-window" class="bg-light">
+                    <div id="message-list" class="px-4 py-5 chat-box bg-white"></div>
+                </div>
+
+                <div id="usernameModal" class="modal">
+                    <div class="modal-content">
+                    <h2>Welcome to the Chat!</h2>
+                    <form id="usernameForm">
+                    <label for="username">Enter your username:</label>
+                    <input type="text" id="usernameInput" name="username" required>
+                    <input type="submit" value="Start chatting">
+                    </form>
+                    </div>
+                </div>
+
+                <form id="chat-form" class="bg-light">
+                    <div class="input-group">
+                        <input id="message-input" type="text" placeholder="Type a message..." autocomplete="off" class="form-control rounded-0 border-0 py-4 bg-light" required>
+                        <div class="input-group-append">
+                            <button id="button-addon2" type="submit" class="btn btn-link"> <i class="fa fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
