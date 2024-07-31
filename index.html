@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Chat</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #chat { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
+        #message { width: 80%; }
+        #send { width: 18%; }
+    </style>
+</head>
+<body>
+    <h1>Network Chat</h1>
+    <div id="chat"></div>
+    <input type="text" id="message" placeholder="Type your message...">
+    <button id="send">Send</button>
+
+    <script>
+        const ws = new WebSocket('ws://localhost:8080');
+
+        const chatDiv = document.getElementById('chat');
+        const messageInput = document.getElementById('message');
+        const sendButton = document.getElementById('send');
+
+        ws.onopen = () => {
+            console.log('Connected to WebSocket server');
+        };
+
+        ws.onmessage = (event) => {
+            console.log('Received message from WebSocket:', event.data);
+            const { recipient, text } = JSON.parse(event.data);
+            const messageElement = document.createElement('div');
+            messageElement.textContent = `${recipient}: ${text}`;
+            chatDiv.appendChild(messageElement);
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+        };
+
+        sendButton.onclick = () => {
+            const text = messageInput.value;
+            const message = {
+                sender: 'userA', // Replace with dynamic username or identifier
+                recipient: 'userB', // Replace with dynamic recipient
+                text
+            };
+            ws.send(JSON.stringify(message));
+            messageInput.value = '';
+        };
+    </script>
+</body>
+</html>
