@@ -70,17 +70,6 @@
 
 ---
 
-<h2>📷 Screenshots</h2>
-
-<p align="center">
-  <img src="https://i.imgur.com/screenshot1.png" alt="Chat Interface" width="700">
-</p>
-<p align="center">
-  <img src="https://i.imgur.com/screenshot2.png" alt="Chat Example" width="700">
-</p>
-
----
-
 <h2>🤝 Contributing</h2>
 
 <p>
