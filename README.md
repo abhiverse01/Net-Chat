@@ -109,9 +109,9 @@
 <h2>💬 Contact</h2>
 
 <p>
-  Your Name - <a href="mailto:youremail@example.com">youremail@example.com</a>
+  Abhishek Shah - <a href="www.abhishekshah007@gmail.com">www.abhishekshah007@gmail.com</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/yourusername/netmag" target="_blank">View Project on GitHub</a>
+  <a href="https://github.com/abhiverse01/net-chat" target="_blank">View Project on GitHub</a>
 </p>
